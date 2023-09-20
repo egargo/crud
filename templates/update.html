@@ -1,0 +1,11 @@
+{% include "header.html" %}
+
+<h2>Update Paste</h2>
+
+<form action="/update/{{paste.0}}" method="post">
+    <input type="text" name="title" placeholder="Paste Title" value={{paste.1}} required />
+    <button type="submit">Submit</button>
+    <br>
+    <textarea type="textarea" name="content" placeholder="Paste Content" value={{paste.2}} required></textarea>
+    <input name="id" value={{paste.0}} type="hidden"/>
+</form>

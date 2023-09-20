@@ -1,0 +1,38 @@
+{% include "header.html" %}
+
+<style>
+
+</style>
+
+<h2>Pastes</h2>
+
+<!-- <form action="/delete" method="delete"> -->
+<table>
+    <tr>
+        <th>Id</th>
+        <th>Title</th>
+        <th>Content</th>
+        <th>Update</th>
+        <th>Delete</th>
+    </tr>
+
+    {% for paste in pastes %}
+
+    <tr>
+        <td>{{paste[0]}}</td>
+        <td>{{paste[1]}}</td>
+        <td>{{paste[2]}}</td>
+
+        <form action="/update" method="get">
+            <td><a href="/update/{{paste[0]}}">Update</a></td>
+        </form>
+
+        <form action="/delete" method="delete">
+            <td><a href="/delete/{{paste[0]}}">Delete</a></td>
+        </form>
+    </tr>
+
+    {% endfor %}
+
+</table>
+<!-- </form> -->
